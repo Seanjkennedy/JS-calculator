@@ -6,39 +6,39 @@
     <body>
         <table>
             <tr>
-                <td colspan="4"><div id="display" >  </div></td>
+                <td colspan="4"><div id="display" >0</div></td>
             </tr>
             
             <tr>
                 <td> <button id="number button1"  onclick="getNumber(id)" value="1">1</button>   </td>
                 <td> <button id="number button2"  onclick="getNumber(id)" value="2">2</button>   </td>
                 <td> <button id="number button3"  onclick="getNumber(id)" value="3">3</button>   </td>
-                <td> <button id="multiply button" class="symbol" onclick="getSymbol(id); disableSymbols()"value="*">X</button>  </td>
+                <td> <button id="symbol1" class="symbol" onclick="getSymbol(id); disableSymbols()" value="*">X</button>  </td>
             </tr> 
             <br>
             <tr>     
                 <td> <button id="number button4"  onclick="getNumber(id)" value="4">4</button>  </td>      
                 <td> <button id="number button5"  onclick="getNumber(id)" value="5">5</button>  </td>      
                 <td> <button id="number button6"  onclick="getNumber(id)" value="6">6</button></td>
-                <td> <button id="subtract button" class="symbol" onclick="getSymbol(id); disableSymbols()" value="-">-</button>  </td>
+                <td> <button id="symbol2" class="symbol" onclick="getSymbol(id); disableSymbols()" value="-">-</button>  </td>
             </tr>     
             <br>
             <tr>
                 <td> <button id="number button7"  onclick="getNumber(id)" value="7">7</button> </td> 
                 <td> <button id="number button8"  onclick="getNumber(id)" value="8">8</button> </td>        
                 <td> <button id="number button9"  onclick="getNumber(id)" value="9">9</button> </td>
-                <td> <button id="add button+"  class="symbol"   onclick="getNumber(id); disableSymbols(symbol)" value="+">+</button> </td>     
+                <td> <button id="symbol3"  class="symbol" onclick="getSymbol(id); disableSymbols()" value="+">+</button> </td>     
             </tr>
             <br>
             <tr>
-                <td> <button id="clear"           onclick="">C</button> </td>
+                <td> <button id="clear"           onclick="clearDisplay()">C</button> </td>
                 <td> <button id="number button0"  onclick="getNumber(id)" value="0">0</button> </td>  
-                <td> <button id="decimal button"  onclick="">.</button> </td>  
-                <td> <button id="divide button" class="symbol"  onclick="getNumber(id); disableSymbols()" value="/">÷</button> </td>
+                <td> <button id="decimal button"  onclick="decimal()">.</button> </td>  
+                <td> <button id="symbol4" class="symbol"  onclick="getSymbol(id); disableSymbols()" value="/">÷</button> </td>
             </tr>
             <br>
             <tr>
-                <td colspan="4"> <button id="equals button" class="symbol"  onclick="">=</button> </td>
+                <td colspan="4"> <button id="equals button"   onclick="equals()">=</button> </td>
             </tr>        
         </table>
 

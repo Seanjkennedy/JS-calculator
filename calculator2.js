@@ -1,124 +1,54 @@
-// pseudo
+var clearDisplay = () => {
 
-// basic functions for add, subtract, divide, multiply
-// function for numbers?
-
-
-
-// whole equation gets stored in an Array. and within that array are individual arrays for each number , seperated by each equation.
-
-
-
-
-
-var displayNumber = {
-    value :"",
-} 
-var displayHTML = document.getElementById(display);
-
-var numberEntered = false;
-var equation = [];
-
-var unjoinedNumberSection = [];
-
-var getNumber = (id) =>  {
-
-    let temp = document.getElementById(id).value;
-    // displayNumber += temp;
-    console.log(displayNumber)
-    display.innerHTML += temp;
-    // numberEntered = true;
-    // document.getElementsByClassName(symbol).disabled = false;
-
-
+    document.getElementById("display").innerHTML = "0";
 }
 
-// var disableSymbols = () => {
+var equals = () => {
 
-//     document.getElementsByClassName(symbol).disabled = true;
-    
-
-
-
+    var getDisplayData = document.getElementById("display").innerHTML;
+    var setCalculationResult = eval(getDisplayData);
+    document.getElementById("display").innerHTML = setCalculationResult;
 }
 
-var getSymbol = (id) =>  {
+var decimal = () => {
 
- 
-    let temp = document.getElementById(id).value;
-    
-    // displayNumber += temp;
-    console.log(displayNumber)
-    display.innerHTML += temp;
-    // numberEntered = false;
-    this.disabled=true;  //this works but can only get it wotking in the html
-
-
-}
-
-var joinedNumber = () => {
-    var temp =unjoinedNumberSection.join("");
-    joinedNumber = "";
-    unjoinedNumberSection = "";
-    return temp
-}
-
-
-// console.log(joinedNumber)
-
-
-
-//   TO DO
-//  NEED TO GET joined NUMEBR AND MATH SYMBOL INTO THE EQUATION ARRAY.  probs not working cos im not passing args correctly.
-
-
-var addMathSymbol = (id, joinedNumber) => {
-    equation.push(joinedNumber);
-    console.log("jnumber", joinedNumber)
-    // joinedNumber = "";
-    // unjoinedNumberSection = "";
-
-
-    console.log("equation", equation)
-    let temp = document.getElementById(id).value;
-    console.log("TEMP in add symbol",temp);
-
-
-    if (temp === "X"){
-        temp = "*";
+    var lastInput = document.getElementById("display").innerHTML;
+    last = lastInput[lastInput.length - 1];
+    if (last !== "+" && last !== "/" && last !== "*" && last !== "-" && last !== ".") {
+        display.innerHTML += ".";
     }
-    if (temp === "÷"){
-        temp = "/";
+}
+
+var getNumber = (id) => {
+
+    var temp = document.getElementById(id).value;
+    if (display.innerHTML === "0") {
+        display.innerHTML = temp;
+    } 
+    else {
+        display.innerHTML += temp;
     }
-    equation.push(temp);
+
+    var elems = document.getElementsByClassName("symbol");
+    for (var i = 0; i < elems.length; i++) {
+        elems[i].disabled = false;
+    }
+}
+
+var getSymbol = (id) => {
+
+    var temp = document.getElementById(id);
+    display.innerHTML += temp.value;
+
+    var elems = document.getElementsByClassName("symbol");
+    for (var i = 0; i < elems.length; i++) {
+        elems[i].disabled = true;
+    }
 
 }
 
+var disableSymbols = () => {
 
+    document.getElementsByClassName("subtract button").disabled = true;
 
-
-
-
-// html
-
-
-// prob actually dont need mult args.
-
-
-// function addNumbers(...args) {
-
-//     return args.reduce((a , b) => a + b)
-// }
-
-// function subtractNumbers(...args) {
-
-//     return args.reduce((a , b) => a - b)
-// }
-
-
-// function to add number to an array.  
-
-
-
-// console.log(addNumbers(1,2,1,1,1,1,1,1,1,1))
-// console.log(subtractNumbers(1,2,1,1,1,1,1,1,1,1))
+}
